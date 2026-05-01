@@ -7,6 +7,7 @@ I always wanted to code a basic, from scratch game, but getting it to physically
 - Stable/Constant visuals and code, even during resizing
 - Simple function and design functions called every tick
 - Multi-OS support (Windows, MacOS, and Linux... and technically Android and IOS. Why would you use it there? Idk. But you can.)
+
 Along with ALL Raylib features.
 ## How do I use it?
 Everything is quite self explanatory, and startup was built to be easy. You should be able to tell where most things are just by looking at it, but for a basic guide:
