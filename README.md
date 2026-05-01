@@ -16,10 +16,10 @@ Everything is quite self explanatory, and startup was built to be easy. You shou
 2. Change variables as desired
 
 ### To create a project from scratch:
-1. Download and open ScrEn in the IDE of your choice
-2. Open `Program.cpp`
-3. Program functional code into `UserUpdate`
-4. Then, put any visual or last-second processing into `UserDraw`
+1. Click 'Use this template' on the top right and create a new repository
+2. Open `Program.cpp` and scroll down
+3. Use the called function `UserUpdate` for processing
+4. Use the called function `UserDraw` for visuals
 
 ### To add it to an existing project:
 \(Feature in progress\)
