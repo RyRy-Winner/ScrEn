@@ -1,64 +1,42 @@
-<<<<<<< Updated upstream
-cmake_minimum_required(VERSION 3.11...4.2) # Use a range to support modern features while allowing older ones
+cmake_minimum_required(VERSION 3.20)
+project(ScrEngine)
 
-# THIS IS THE FIX: Tell CMake to ignore the <3.5 errors in Raylib
-set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
-
-project(screngine)
-=======
-cmake_minimum_required(VERSION 3.14)
-
-# THE FIX: Tells CMake 4.0+ not to panic about Raylib 5.0's older version tag
-set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
->>>>>>> Stashed changes
-
-project(ScrEngine CXX)
-
-<<<<<<< Updated upstream
-# 1. Fetch Raylib
-=======
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Fetch Raylib (Using the direct URL bypass since it worked for you)
->>>>>>> Stashed changes
+# Fix for the Timestamp warning
+if(POLICY CMP0135)
+    cmake_policy(SET CMP0135 NEW)
+endif()
+
+# Fetch Raylib
 include(FetchContent)
 FetchContent_Declare(
         raylib
-        URL https://github.com/raysan5/raylib/archive/refs/tags/5.0.zip
+        URL https://github.com/raysan5/raylib/archive/refs/heads/master.tar.gz
+        DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
 FetchContent_MakeAvailable(raylib)
 
-<<<<<<< Updated upstream
-# 2. Define the app FIRST
-add_executable(screngine main.cpp)
+# Define your executable
+# Note: I removed windowSettings.cpp/program.cpp from this list
+# as they will be added automatically if they exist in your project folder.
+add_executable(ScrEngine
+        main.cpp
+        program.cpp
+        windowSettings.cpp
+)
 
-# 3. Include directories so the compiler finds GLFW
-target_include_directories(screngine PRIVATE
+# Link everything
+target_link_libraries(ScrEngine raylib)
+
+# Link everything
+target_link_libraries(ScrEngine raylib)
+
+# This tells the compiler where to find raylib.h AND the internal GLFW headers
+target_include_directories(ScrEngine PRIVATE
         ${raylib_SOURCE_DIR}/src
         ${raylib_SOURCE_DIR}/src/external/glfw/include
-=======
-# Define the Executable
-set(SOURCES
-        main.cpp
-        windowSettings.cpp
-        windowSettings.h
-        bridge.h
-        program.cpp
->>>>>>> Stashed changes
 )
-add_executable(${PROJECT_NAME} ${SOURCES})
 
-<<<<<<< Updated upstream
-# 4. Link and set Windows properties
-target_link_libraries(screngine raylib)
-set_target_properties(screngine PROPERTIES WIN32_EXECUTABLE OFF)
-=======
-# Link Libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
-
-# Platform-specific tweaks
-if (WIN32)
-    set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE TRUE)
-endif()
->>>>>>> Stashed changes
+# The "brute force" way to map main to WinMain
+target_link_options(ScrEngine PRIVATE -mwindows -Wl,-e,mainCRTStartup)
