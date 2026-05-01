@@ -21,9 +21,13 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
+<<<<<<< Updated upstream
 CTestTestfile.cmake
 _deps/
 CMakeUserPresets.json
+=======
+cmake-build-debug
+>>>>>>> Stashed changes
 
 # Ignore User-specific CMake settings
 CMakeLists.txt.user*
