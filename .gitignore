@@ -1,69 +1,58 @@
-# Prerequisites
-*.d
+# =========================================
+# CLion / JetBrains Specific
+# =========================================
+# User-specific settings, run configurations, and VCS history
+.idea/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# =========================================
+# CMake Build Artifacts (Recommended)
+# =========================================
+# Ignore all default cmake build folders (debug, release, etc.)
+cmake-build-*/
+# Also ignore the older convention "build" if you use it
+/build/
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
-build/
-Build/
-build-*/
-
-# CMake generated files
-CMakeFiles/
+# Ignore CMake cache and files
 CMakeCache.txt
-cmake_install.cmake
+CMakeFiles/
+CMakeScripts/
+Testing/
 Makefile
+cmake_install.cmake
 install_manifest.txt
 compile_commands.json
+CTestTestfile.cmake
+_deps/
+CMakeUserPresets.json
 
-# Temporary files
-*.tmp
+# Ignore User-specific CMake settings
+CMakeLists.txt.user*
+
+# =========================================
+# Windows System Files
+# =========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# =========================================
+# C++ Specific
+# =========================================
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.manifest
+*.o
+*.a
+*.so
+*.out
+*.dylib
+
+# =========================================
+# Other
+# =========================================
 *.log
-*.bak
-*.swp
-
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
