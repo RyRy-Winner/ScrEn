@@ -2,17 +2,9 @@
 #include "bridge.h"
 #include <vector>
 
-// --- SHARED STATE ---
-// Because logic and drawing are in the same file,
-// they can both see these variables easily.
-struct Entity {
-    Vector2 position;
-    Color color;
-    float radius;
-};
 
-std::vector<Entity> shapes;
-float rotation = 0.0f;
+// Initialize variables here
+
 
 // Called 1st (Used for beforehand calculations)
 // --- LOGIC ---
