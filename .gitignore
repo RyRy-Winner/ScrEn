@@ -60,3 +60,4 @@ $RECYCLE.BIN/
 # Other
 # =========================================
 *.log
+.idea/editor.xml

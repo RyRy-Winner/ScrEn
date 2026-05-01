@@ -168,7 +168,6 @@ void UpdateEngine() {
     int w = GetScreenWidth(); int h = GetScreenHeight();
     Vector2 mouse = GetMousePosition(); Vector2 winPos = GetWindowPosition();
     state.dpiScale = GetWindowScaleDPI().x;
-    state.gridSpacing = (int)(40 * state.dpiScale);
     state.titleHeight = 40.0f * state.dpiScale;
     state.borderThickness = 12.0f * state.dpiScale;
     state.contentArea = { 0, state.titleHeight, (float)w, (float)h - state.titleHeight };
@@ -185,8 +184,9 @@ void DrawEngine() {
     BeginDrawing();
     ClearBackground(config.backgroundColor);
 
-    for (int i = 0; i < w; i += state.gridSpacing) DrawLine(i, (int)state.titleHeight, i, h, config.gridColor);
-    for (int i = (int)state.titleHeight; i < h; i += state.gridSpacing) DrawLine(0, i, w, i, config.gridColor);
+    // Optional grid background design
+    //for (int i = 0; i < w; i += (int)(40 * state.dpiScale)) DrawLine(i, (int)state.titleHeight, i, h, config.gridColor);
+    //for (int i = (int)state.titleHeight; i < h; i += (int)(40 * state.dpiScale)) DrawLine(0, i, w, i, config.gridColor);
 
     BeginScissorMode(0, (int)state.titleHeight, w, h - (int)state.titleHeight);
     UserDraw();
