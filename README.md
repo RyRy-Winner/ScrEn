@@ -1,6 +1,6 @@
 # ScrEn
 ## A basic window for Raylib projects
-I always wanted to code a basic, from scratch game, but getting it to physically exist was always annoying. Windows wouldn't work well and things always broke, or I had to use large game engines like Unity just to get these basic features, when all I needed was a place to display my code. So finally I made ScrEn, a customizable C++ window.
+I always wanted to code a basic, from scratch game, but getting it to physically exist was always annoying. Windows wouldn't work well and things always broke, or I had to use large game engines like Unity just to get these basic features, when all I needed was a place to display my code. So finally I made ScrEn, a fully customizable and easy to use C++ window, built with Raylib.
 
 ### Features:
 - A customizable window
