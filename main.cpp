@@ -230,7 +230,7 @@ void DrawEngine() {
     cx = roundf(minR.x + btnW/2);
     DrawLineEx({cx-iS, cy}, {cx+iS, cy}, 1.3f, config.iconColor);
 
-    DrawFPS(10, h - (int)(25 * s));
+    // DrawFPS(10, h - (int)(25 * s));
     EndDrawing();
 }
 
