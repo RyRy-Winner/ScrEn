@@ -4,6 +4,7 @@
 #include "bridge.h"
 
 // User-Facing Functions
+void UserInit();
 void UserUpdate();
 void UserDraw();
 
@@ -241,6 +242,8 @@ int main() {
     if (FileExists(config.iconPath)) {
         Image icon = LoadImage(config.iconPath); SetWindowIcon(icon); UnloadImage(icon);
     }
+
+    UserInit();
 
     while (state.keepRunning && !WindowShouldClose()) { UpdateEngine(); DrawEngine(); }
     CloseWindow();
