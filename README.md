@@ -18,8 +18,9 @@ Everything is quite self explanatory, and startup was built to be easy. You shou
 ### To create a project from scratch:
 1. Click 'Use this template' on the top right and create a new repository
 2. Open `Program.cpp` and scroll down
-3. Use the called function `UserUpdate` for processing
-4. Use the called function `UserDraw` for visuals
+3. Use the called function `UserInit` for data initialization
+4. Use the called function `UserUpdate` for processing
+5. Use the called function `UserDraw` for visuals
 
 ### To add it to an existing project:
 \(Feature in progress\)
